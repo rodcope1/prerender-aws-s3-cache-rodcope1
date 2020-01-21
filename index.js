@@ -1,5 +1,6 @@
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3({params: {Bucket: process.env.S3_BUCKET_NAME}});
+const url = require('url');
 
 module.exports = {
   requestReceived: function(req, res, next) {
@@ -39,11 +40,17 @@ module.exports = {
     });
   },
 
-  getCacheKey: function(req) {
+  getCacheKey: function(req) {  
     let key = req.prerender.url;
     if (req.prerender.width) {
       key = `${key}-width-${req.prerender.width}`;
     }
+    
+    let optionsObj = url.parse(req.url, true).query;
+    if ('viewerType' in optionsObj) {
+      key = `${optionsObj.viewerType}/${key}`;
+    }
+
     if (process.env.S3_PREFIX_KEY) {
       key = `${process.env.S3_PREFIX_KEY}/${key}`;
     }
