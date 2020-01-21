@@ -46,7 +46,7 @@ module.exports = {
       key = `${key}-width-${req.prerender.width}`;
     }
     
-    let optionsObj = url.parse(req.url, true).query;
+    const optionsObj = url.parse(req.url, true).query;
     if ('viewerType' in optionsObj) {
       key = `${optionsObj.viewerType}/${key}`;
     }
