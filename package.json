@@ -6,6 +6,6 @@
   "author": "Todd Hooper",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "~2.307.0"
+    "aws-sdk": "^2.765.0"
   }
 }
