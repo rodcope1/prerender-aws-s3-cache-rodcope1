@@ -6,14 +6,14 @@ This is a plugin meant to be used with your Prerender server to cache responses 
 Run this from within your Prerender server directory:
 
 ```bash
-$ npm install prerender-aws-s3-cache --save
+$ npm install prerender-aws-s3-cache-rodcope1 --save
 ```
 ##### server.js
 ```js
-const prerender = require('prerender');
+const prerender = require('prerender-rodcope1');
 const server = prerender();
 
-server.use(require('prerender-aws-s3-cache'))
+server.use(require('prerender-aws-s3-cache-rodcope1'))
 
 server.start();
 ```
@@ -53,7 +53,7 @@ $ export AWS_REGION=<region name>
 For example :
 
 ```
-$ export AWS_REGION=eu-west-1
+$ export AWS_REGION=us-east-2
 ```
 
 #### S3_PREFIX_KEY
