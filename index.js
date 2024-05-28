@@ -21,7 +21,9 @@ module.exports = {
         return res.send(200, html);
       }
     } catch (err) {
-      console.error(err);
+      // ROD: we always get an 'Access Denied' error when requesting a key that doesn't exist, so this
+      //      is too noisy.
+      //console.error(err);
     }
 
     next();
