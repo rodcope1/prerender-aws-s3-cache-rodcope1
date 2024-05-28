@@ -1,11 +1,13 @@
 {
   "name": "prerender-aws-s3-cache-rodcope1",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "S3 cache for use with Prerender server",
   "main": "index.js",
   "author": "Todd Hooper",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.942.0"
+    "@aws-sdk/client-s3": "3.565.0",
+    "@aws-sdk/credential-providers": "3.565.0",
+    "@aws-sdk/util-locate-window": "3.535.0"
   }
 }
