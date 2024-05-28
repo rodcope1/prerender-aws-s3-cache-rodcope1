@@ -63,6 +63,10 @@ module.exports = {
     if (process.env.S3_PREFIX_KEY) {
       key = `${process.env.S3_PREFIX_KEY}/${key}`;
     }
+
+    // remove any trailing slash
+    key = key.replace(/\/$/, '');
+
     return key;
   },
 };
